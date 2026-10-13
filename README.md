@@ -142,21 +142,55 @@ Sales are heavily skewed toward SP and RJ, with SP, BA, and RJ repeatedly domina
 **6. Seller Performance Disparities**
 The #1-ranked seller (SP, 1,124 orders) holds a strong 4.14 average review, but the #5-ranked seller (SP, 973 orders, 188K revenue) trails at only 3.35 — the lowest score among the top 5 revenue generators — while a lower-volume #4 seller (578 orders) posts the group's best score at 4.37. High revenue and order volume don't reliably correlate with satisfaction, exposing a retention/reputation risk inside the platform's own top accounts.
 
----
+## 🚚 Additional Analysis: Delivery Performance Using Python
 
-## 🎯 Recommendations
+### Objective
+Extend the existing e-commerce analysis with a focused investigation of delivery timeliness and delivery performance across Brazilian customer states.
 
-*(from `Insights_Report__Olist_ECommerce_Performance.pdf`)*
+### Tools Used
+- Python
+- Pandas
+- Matplotlib
 
-- **Investigate the post-peak growth plateau** — examine whether average order value or category mix shifted after the November 2017 peak, and design re-acceleration levers (loyalty incentives, bundling, upsell campaigns) aimed at lifting order value rather than just order count.
-- **Prioritize last-mile carrier partnerships in the North region** — since carrier-to-customer transit (not seller handling) is the dominant delay for RR, AP, and AM, renegotiate or diversify last-mile carrier contracts there rather than tightening seller-side SLAs.
-- **Investigate Sports & Leisure category quality** — audit product listings, packaging, and post-purchase experience given its high revenue but below-average review score.
-- **Reassess pricing or packaging for high-freight-burden categories** — flowers, furniture/mattress, and diapers & hygiene are losing a disproportionate share of revenue to shipping; consider regional fulfillment hubs, minimum order thresholds, or price adjustments.
-- **Audit the underperforming top-5 seller** — conduct a quality review of the SP-based seller ranked #5 by revenue but lowest by review score (3.35).
-- **De-risk geographic concentration** — invest in seller recruitment and marketing in underrepresented states to reduce dependency on the SP/RJ corridor over time.
+### Key Findings
+- **96,476 orders** had both actual delivery dates and estimated delivery dates available.
+- **7,827 orders** were delivered after their estimated dates.
+- **8.11% late-delivery rate** among the analyzed orders.
+- **12.56 days** average actual delivery time, measured from purchase to customer delivery.
+- Compared average delivery time and late-delivery percentage across customer states.
 
----
+### Visualizations
+The additional analysis generates:
+- Overall delivery performance KPIs
+- Average delivery time by customer state
+- Late-delivery percentage by customer state
 
-## 👤 Author
+### Generated Files
+- `delivery_performance_analysis.py` — calculates delivery metrics and exports results.
+- `create_delivery_charts.py` — generates the visualizations.
+- `analysis_outputs/delivery_performance_by_order.csv`
+- `analysis_outputs/delivery_performance_by_state.csv`
+- `analysis_outputs/01_overall_delivery_kpis.png`
+- `analysis_outputs/02_average_delivery_by_state.png`
+- `analysis_outputs/03_late_delivery_by_state.png`
 
-**Sadman Sakib**
+### How to Run
+
+Install the required libraries if necessary:
+
+```bash
+python -m pip install pandas matplotlib
+```
+
+Run the analysis and generate the charts:
+
+```bash
+python delivery_performance_analysis.py
+python create_delivery_charts.py
+```
+
+*This is an additional analysis developed for this repository using the public Olist dataset. The results reflect the records and calculations used in these Python scripts.*
+
+## Author
+
+** Yaparla Usharani **
