@@ -1,0 +1,18 @@
+
+# Raw datasets
+datasets/
+archive/
+
+# Generated analysis outputs
+analysis_outputs/
+
+# Local databases
+*.db
+*.sqlite
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local backup
+README_backup.md
